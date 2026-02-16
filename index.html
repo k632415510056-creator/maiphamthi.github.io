@@ -6,6 +6,121 @@
     <title>Portfolio Của Maii 🚀</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .museum-card {
+            margin-top: 30px;
+            /* Nếu trong style.css của bạn thẻ .card đã có background và viền rồi thì đoạn này sẽ tự động ăn theo */
+        }
+        
+        .museum-title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 5px;
+            color: #ff6b6b; /* Màu hồng/đỏ nổi bật */
+        }
+
+        .museum-subtitle {
+            text-align: center;
+            font-size: 1em;
+            margin-bottom: 30px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px; 
+        }
+
+        /* Style riêng cho các thẻ ký ức bên trong */
+        .memory-card {
+            background: #fff;
+            border: 2px solid #111; /* Viền đen chuẩn Neo-Brutalism */
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 4px 4px 0px #111; /* Đổ bóng cứng */
+            transition: transform 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .memory-card:hover {
+            transform: translate(-2px, -2px); 
+            box-shadow: 6px 6px 0px #111;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #111;
+            margin-bottom: 15px;
+        }
+
+        .card-title-mem {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #111; 
+        }
+
+        .input-line {
+            border: none;
+            border-bottom: 2px dashed #111;
+            width: 100%;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1em;
+            padding: 5px 0;
+            background: transparent;
+            outline: none;
+            margin-bottom: 15px;
+        }
+
+        /* Khung Polaroid đặc biệt */
+        .polaroid-card {
+            padding: 15px 15px 30px 15px; 
+            border-radius: 4px;
+        }
+        .polaroid-card .card-img {
+            border-radius: 0; 
+            height: 200px;
+        }
+        .polaroid-caption {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        /* Căn giữa khung cuối cùng */
+        .card-full-width {
+            grid-column: 1 / -1; 
+        }
+
+        /* Nút bấm (nếu trong style.css của bạn có rồi thì nó sẽ ăn theo, mình thêm ở đây để chắc chắn nó nảy lên) */
+        .btn-mem {
+            padding: 10px;
+            border: 2px solid #111;
+            border-radius: 6px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: auto; /* Đẩy nút xuống dưới cùng */
+        }
+        .btn-mem:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 3px 3px 0px #111;
+        }
+        .btn-blue { background: #bdc0fe; color: #111; }
+        .btn-white { background: #fff; color: #111; }
+
+        @media (max-width: 600px) {
+            .grid-layout { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -34,22 +149,51 @@
                     <span class="tag">Tiếng Anh 🇬🇧</span>
                     <span class="tag">Chạy Deadline 🏃‍♂️</span>
                 </div>
-               <div style="display: flex; justify-content: space-between; gap: 10px; margin-top: 20px;">
-    
-    <img src="tp.jpg" alt="Ảnh 1" style="width: 32%; height: 120px; object-fit: cover; border-radius: 8px; border: 2px solid #111;">
-    
-    <img src="tp2.jpg" alt="Ảnh 2" style="width: 32%; height: 120px; object-fit: cover; border-radius: 8px; border: 2px solid #111;">
-    
-    <img src="tacpham2.jpg" alt="Ảnh 3" style="width: 32%; height: 120px; object-fit: cover; border-radius: 8px; border: 2px solid #111;">
-    
-</div>
+                <div style="display: flex; justify-content: space-between; gap: 10px; margin-top: 20px;">
+                    <img src="tp.jpg" alt="Ảnh 1" style="width: 32%; height: 120px; object-fit: cover; border-radius: 8px; border: 2px solid #111;">
+                    <img src="tp2.jpg" alt="Ảnh 2" style="width: 32%; height: 120px; object-fit: cover; border-radius: 8px; border: 2px solid #111;">
+                    <img src="tacpham2.jpg" alt="Ảnh 3" style="width: 32%; height: 120px; object-fit: cover; border-radius: 8px; border: 2px solid #111;">
+                </div>
             </section>
-        </main>
+
+            <section class="card museum-card">
+                <h2 class="museum-title">✨ Bảo Tàng Ký Ức ✨</h2>
+                <p class="museum-subtitle">Trạm sạc năng lượng sau những giờ chạy deadline sấp mặt...</p>
+
+                <div class="grid-layout">
+                    <div class="memory-card polaroid-card">
+                        <div class="card-title-mem">1. Bức ảnh thích nhất dạo này:</div>
+                        <img src="https://images.unsplash.com/photo-1518599904199-0ca897819ddb?auto=format&fit=crop&w=600&q=80" alt="Fav photo" class="card-img">
+                        <div class="polaroid-caption">"Thấy bình yên..."</div>
+                    </div>
+
+                    <div class="memory-card">
+                        <div class="card-title-mem">2. Thành tựu nhỏ bé đáng tự hào:</div>
+                        <p style="font-size: 0.85em; margin-bottom: 10px;">(VD: Dậy sớm, nấu ăn, uống đủ nước...)</p>
+                        <input type="text" class="input-line" placeholder="Thành tựu của mình là...">
+                        <button class="btn-mem btn-blue">Lưu Thành Tựu ✨</button>
+                    </div>
+
+                    <div class="memory-card">
+                        <div class="card-title-mem">3. Bài hát sạc đầy pin: 🎶</div>
+                        <input type="text" class="input-line" placeholder="Tên bài hát - Ca sĩ...">
+                        <button class="btn-mem btn-white">Lưu Tracklist 💿</button>
+                    </div>
+
+                    <div class="memory-card">
+                        <div class="card-title-mem">4. Người làm tôi cười nhiều nhất tuần:</div>
+                        <input type="text" class="input-line" placeholder="Gõ tên người ấy vào đây...">
+                        <button class="btn-mem btn-white">Gửi Năng Lượng 💌</button>
+                    </div>
+
+                    <div class="memory-card card-full-width">
+                        <div class="card-title-mem">5. Một lời khen dạo này làm mình vui cả ngày:</div>
+                        <input type="text" class="input-line" placeholder="Lời khen đó là gì thế?">
+                        <button class="btn-mem btn-blue" style="width: 200px; margin: 0 auto;">Ghi Nhận Lời Khen 💖</button>
+                    </div>
+                </div>
+            </section>
+            </main>
     </div>
 </body>
-
 </html>
-
-
-
-
