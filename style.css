@@ -1,29 +1,102 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+/* Xóa mặc định, thiết lập phông chữ */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
 }
-header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 20px;
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #f0f4f8; /* Nền xám nhạt */
+    color: #111;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+.container {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Khoảng cách giữa các hộp */
+}
+
+/* PHONG CÁCH GEN Z: Hộp có viền đen dày, đổ bóng cứng */
+.card {
+    background: #fff;
+    border: 3px solid #111;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 6px 6px 0px #111;
+    transition: transform 0.2s;
+}
+.card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px #111;
+}
+
+/* Card Avatar (Màu nền tím pastel) */
+.profile-card {
     text-align: center;
+    background: #e0b0ff; 
 }
-section {
-    padding: 20px;
-    margin: 20px;
-    background: #ffffff;
-    border-radius: 5px;
+.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid #111;
+    object-fit: cover;
+    margin-bottom: 16px;
+    background-color: #fff;
 }
-footer {
-    text-align: center;
-    padding: 10px;
-    background: #35424a;
-    color: #ffffff;
+h1 { font-size: 1.8rem; margin-bottom: 8px; }
+.role { font-weight: bold; margin-bottom: 20px; }
+
+/* Các nút bấm Mạng Xã Hội */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
-a {
-    color: #e8491d;
+.btn {
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 3px solid #111;
+    border-radius: 30px;
+    box-shadow: 3px 3px 0px #111;
+    transition: all 0.2s;
+}
+.btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px #111;
+}
+.btn-pink { background: #ff90e8; }
+.btn-blue { background: #90f0ff; }
+.btn-yellow { background: #ffea00; }
+
+/* Card Giới Thiệu */
+.about-card { background: #fff; }
+h2 {
+    border-bottom: 3px solid #111;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* Card Kỹ Năng (Màu nền xanh mint) */
+.skills-card { background: #b2f5ea; }
+.tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.tag {
+    background: #fff;
+    border: 2px solid #111;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 2px 2px 0px #111;
 }
