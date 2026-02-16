@@ -73,7 +73,7 @@ h1 { font-size: 1.8rem; margin-bottom: 8px; }
     box-shadow: 5px 5px 0px #111;
 }
 .btn-blue { background: #bdc0fe; }
-.btn-white { background: #ffffff; }
+.btn-white { background: #fff; }
 
 /* Card Giới Thiệu */
 .about-card { background: #fff; }
@@ -118,4 +118,169 @@ h2 {
         filter: drop-shadow(0px 0px 8px #ffea00); /* Toả hào quang màu vàng */
     }
 }
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bảo Tàng Ký Ức</title>
+<style>
+    /* Cài đặt chung cho trang */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #fdfbf7; /* Màu nền be nhạt ấm áp */
+        color: #5c4b41; /* Màu chữ nâu ấm */
+        padding: 40px 20px;
+    }
+
+    .museum-container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .museum-title {
+        text-align: center;
+        font-size: 2.2em;
+        margin-bottom: 10px;
+        color: #d48a74; /* Màu cam đất pastel */
+    }
+
+    .museum-subtitle {
+        text-align: center;
+        font-size: 1.1em;
+        margin-bottom: 40px;
+        font-style: italic;
+        color: #8a7b72;
+    }
+
+    /* Lưới 2 cột cho các khung */
+    .grid-layout {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 cột bằng nhau */
+        gap: 25px; /* Khoảng cách giữa các khung */
+    }
+
+    /* Style chung cho mỗi khung */
+    .memory-card {
+        background: #ffffff;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .memory-card:hover {
+        transform: translateY(-5px); /* Hiệu ứng nổi lên khi di chuột */
+    }
+
+    .card-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    .card-title {
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+        color: #4a5c54; /* Màu xanh rêu nhạt */
+    }
+
+    .input-line {
+        border: none;
+        border-bottom: 1.5px dashed #ccc;
+        width: 100%;
+        font-family: inherit;
+        font-size: 1em;
+        padding: 5px 0;
+        background: transparent;
+        color: #d48a74;
+        outline: none;
+    }
+
+    /* Style ĐẶC BIỆT cho khung Polaroid (Khung 1) */
+    .polaroid-card {
+        background: #fff;
+        padding: 15px 15px 40px 15px; /* Phần dưới dài hơn để ghi caption */
+        border-radius: 2px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .polaroid-card .card-img {
+        border-radius: 0; /* Ảnh polaroid góc vuông */
+        height: 220px;
+    }
+    .polaroid-caption {
+        text-align: center;
+        font-family: 'Comic Sans MS', cursive, sans-serif; /* Font chữ viết tay */
+        color: #555;
+        margin-top: 10px;
+    }
+
+    /* Căn giữa khung số 5 (khung cuối cùng) */
+    .card-full-width {
+        grid-column: 1 / -1; 
+        max-width: 50%;
+        margin: 0 auto;
+    }
+
+    /* Responsive: Chuyển về 1 cột khi xem trên điện thoại */
+    @media (max-width: 768px) {
+        .grid-layout {
+            grid-template-columns: 1fr;
+        }
+        .card-full-width {
+            max-width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="museum-container">
+    <h1 class="museum-title">✨ Góc "Bảo Tàng Ký Ức" ✨</h1>
+    <p class="museum-subtitle">Thay vì đếm số task đã muộn, hãy lưu lại những khoảnh khắc khiến bạn mỉm cười...</p>
+
+    <div class="grid-layout">
+        
+        <div class="memory-card polaroid-card">
+            <div class="card-title">1. Bức ảnh tôi yêu thích nhất gần đây:</div>
+            <img src="https://images.unsplash.com/photo-1518599904199-0ca897819ddb?auto=format&fit=crop&w=600&q=80" alt="My favorite photo" class="card-img">
+            <div class="polaroid-caption">"Nhìn vào đây là thấy bình yên..."</div>
+        </div>
+
+        <div class="memory-card">
+            <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638ce?auto=format&fit=crop&w=600&q=80" alt="Small achievement" class="card-img">
+            <div class="card-title">2. Thành tựu nhỏ bé nhưng đáng tự hào nhất gần đây:</div>
+            <p style="font-size: 0.9em; color: #888; margin-top: 0;">(VD: Dậy sớm, nấu một bữa ngon, uống đủ nước...)</p>
+            <input type="text" class="input-line" placeholder="Viết thành tựu của bạn vào đây...">
+        </div>
+
+        <div class="memory-card">
+            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80" alt="Recharging song" class="card-img">
+            <div class="card-title">3. Bài hát sạc đầy pin cho tôi dạo này: 🎶</div>
+            <input type="text" class="input-line" placeholder="Tên bài hát - Tên ca sĩ...">
+        </div>
+
+        <div class="memory-card">
+            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=600&q=80" alt="Someone who made me smile" class="card-img">
+            <div class="card-title">4. Người khiến tôi cười nhiều nhất tuần qua:</div>
+            <input type="text" class="input-line" placeholder="Gõ tên người ấy vào đây (hoặc tên idol)...">
+        </div>
+
+        <div class="memory-card card-full-width">
+            <img src="https://images.unsplash.com/photo-1521185496955-15097b20c5fe?auto=format&fit=crop&w=600&q=80" alt="A nice compliment" class="card-img">
+            <div class="card-title">5. Một lời khen tôi nhận được gần đây:</div>
+            <p style="font-size: 0.9em; color: #888; margin-top: 0;">(Và nó đã làm tôi vui cả ngày!)</p>
+            <input type="text" class="input-line" placeholder="Lời khen đó là gì thế?">
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
 
