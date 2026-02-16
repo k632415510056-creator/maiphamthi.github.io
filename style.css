@@ -34,10 +34,10 @@ body {
     box-shadow: 8px 8px 0px #111;
 }
 
-/* Card Avatar (Màu nền tím pastel) */
+/* Card Avatar */
 .profile-card {
     text-align: center;
-    background: #e0b0ff; 
+    background: #bde0fe; 
 }
 .avatar {
     width: 130px;
@@ -72,9 +72,8 @@ h1 { font-size: 1.8rem; margin-bottom: 8px; }
     transform: translate(-2px, -2px);
     box-shadow: 5px 5px 0px #111;
 }
-.btn-pink { background: #ff90e8; }
-.btn-blue { background: #90f0ff; }
-.btn-yellow { background: #ffea00; }
+.btn-blue { background: #bdc0fe; }
+.btn-white { background: #ffffff; }
 
 /* Card Giới Thiệu */
 .about-card { background: #fff; }
@@ -119,3 +118,4 @@ h2 {
         filter: drop-shadow(0px 0px 8px #ffea00); /* Toả hào quang màu vàng */
     }
 }
+
