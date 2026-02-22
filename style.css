@@ -6,7 +6,7 @@
 }
 body {
     font-family: 'Space Grotesk', sans-serif;
-    background-color: #f0f4f8; /* Nền xám nhạt */
+    background-color: #f0f4f8; 
     color: #111;
     display: flex;
     justify-content: center;
@@ -74,7 +74,7 @@ h1 { font-size: 1.8rem; margin-bottom: 8px; }
 }
 /* Màu cho nút Instagram */
 .btn-pink {
-    background-color: #ff59ff;
+    background-color: #ccccff;
     color: #111;
 }
 
@@ -138,7 +138,7 @@ h2 {
     text-align: center;
     font-size: 2em;
     margin-bottom: 5px;
-    color: #ff6b6b; /* Màu hồng/đỏ nổi bật */
+    color: #111;
 }
 
 .museum-subtitle {
@@ -242,4 +242,5 @@ h2 {
 @media (max-width: 600px) {
     .grid-layout { grid-template-columns: 1fr; }
 }
+
 
