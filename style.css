@@ -248,4 +248,37 @@ h2 {
     align-items: center;     /* Căn giữa theo chiều dọc (nếu có chiều cao) */
     /* min-height: 100vh; */ /* Bỏ comment dòng này nếu muốn căn giữa toàn màn hình */
 }
+/* ===== Museum layout chỉnh dọc + căn giữa ===== */
+.grid-layout {
+    display: flex;
+    flex-direction: column;   /* xếp dọc */
+    align-items: center;      /* căn giữa ngang */
+    gap: 20px;                /* khoảng cách giữa các card */
+    margin-top: 20px;
+}
 
+/* Card chung */
+.memory-card {
+    width: 300px;
+    max-width: 90%;
+}
+
+/* Nếu có class full width thì bỏ full */
+.card-full-width {
+    width: 300px;
+}
+
+/* Ảnh polaroid */
+.polaroid-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* note box */
+.note-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    border: 2px solid #111;
+    text-align: center;
+}
