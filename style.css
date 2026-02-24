@@ -243,11 +243,11 @@ h2 {
 @media (max-width: 600px) {
     .grid-layout { grid-template-columns: 1fr; }
 }
-.grid-layout {
-    display: flex;
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    align-items: center;     /* Căn giữa theo chiều dọc (nếu có chiều cao) */
-    /* min-height: 100vh; */ /* Bỏ comment dòng này nếu muốn căn giữa toàn màn hình */
+.grid-layout{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch; /* đổi center → stretch */
+    gap:20px;
 }
 /* ===== FIX museum cards layout ===== */
 .museum-card .grid-layout{
@@ -259,8 +259,7 @@ h2 {
 }
 
 .museum-card .memory-card{
-    width: 320px !important;
-    max-width: 92%;
+    width:100%;
 }
 
 .museum-card .card-full-width{
@@ -271,5 +270,6 @@ h2 {
     width: 100%;
     border-radius: 12px;
 }
+
 
 
