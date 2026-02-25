@@ -271,6 +271,31 @@ h2 {
     border-radius: 12px;
 }
 
+/* --- CSS CHO NHỮNG NGÔI SAO TRONG BẢO TÀNG KÝ ỨC --- */
+
+.relative-box {
+    position: relative; /* Giữ các ngôi sao nằm quanh phạm vi của thẻ này */
+}
+
+.star {
+    position: absolute;
+    font-size: 1.5rem; /* Độ lớn của sao */
+    z-index: 10;
+    /* Hiệu ứng nhấp nháy lấp lánh */
+    animation: twinkle 1.5s infinite alternate ease-in-out;
+}
+
+/* Tọa độ đặt sao ở các góc (có thể chỉnh số px để vừa ý hơn) */
+.star-top-left { top: -15px; left: -15px; }
+.star-top-right { top: -15px; right: -15px; }
+.star-bottom-left { bottom: -15px; left: -15px; }
+.star-bottom-right { bottom: -15px; right: -15px; }
+
+/* Tạo animation nhấp nháy */
+@keyframes twinkle {
+    0% { transform: scale(0.8); opacity: 0.5; }
+    100% { transform: scale(1.2); opacity: 1; }
+}
 
 
 
