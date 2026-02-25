@@ -149,11 +149,13 @@ h2 {
     opacity: 0.8;
 }
 
+/* Gộp chung grid-layout cho gọn và chuẩn xác */
 .grid-layout {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    align-items: center;     /* Căn giữa các thẻ con */
+    justify-content: center; 
+    gap: 22px;
 }
 
 /* Style riêng cho các thẻ ký ức bên trong */
@@ -164,8 +166,13 @@ h2 {
     padding: 15px;
     box-shadow: 4px 4px 0px #111; /* Đổ bóng cứng */
     transition: transform 0.2s ease;
+    
+    /* THÊM 3 DÒNG NÀY ĐỂ CĂN GIỮA MỌI THỨ BÊN TRONG */
     display: flex;
     flex-direction: column;
+    align-items: center; /* Căn giữa ảnh và khối theo chiều ngang */
+    text-align: center;  /* Căn giữa text */
+    width: 100%;
 }
 
 .memory-card:hover {
@@ -189,6 +196,13 @@ h2 {
     color: #111; 
 }
 
+/* Đảm bảo khung nội dung (.note-box) cũng được căn giữa */
+.note-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .input-line {
     border: none;
     border-bottom: 2px dashed #111;
@@ -204,21 +218,23 @@ h2 {
 /* Khung Polaroid đặc biệt */
 .polaroid-card {
     padding: 15px 15px 30px 15px; 
-    border-radius: 4px;
+    border-radius: 12px; /* Đồng bộ viền bo góc */
 }
+
 .polaroid-card .card-img {
-    border-radius: 0; 
     height: 200px;
+    width: 100%;
+    border-radius: 12px; /* Fix góc ảnh bo tròn theo yêu cầu */
 }
+
 .polaroid-caption {
-    text-align: center;
     font-weight: bold;
     margin-top: 5px;
 }
 
-/* Căn giữa khung cuối cùng */
+/* Căn giữa khung cuối cùng & Đặt chiều rộng cố định */
 .card-full-width {
-    grid-column: 1 / -1; 
+    width: 320px !important; /* Fix kích thước cho bằng nhau */
 }
 
 /* Nút bấm */
@@ -230,45 +246,22 @@ h2 {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.2s ease;
-    margin-top: auto; /* Đẩy nút xuống dưới cùng */
+    margin-top: auto;
 }
+
 .btn-mem:hover {
     transform: translate(-2px, -2px);
     box-shadow: 3px 3px 0px #111;
 }
+
 .btn-blue { background: #bdc0fe; color: #111; }
 .btn-white { background: #fff; color: #111; }
 
 /* Responsive cho điện thoại */
 @media (max-width: 600px) {
-    .grid-layout { grid-template-columns: 1fr; }
-}
-.grid-layout {
-    display: flex;
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    align-items: center;     /* Căn giữa theo chiều dọc (nếu có chiều cao) */
-    /* min-height: 100vh; */ /* Bỏ comment dòng này nếu muốn căn giữa toàn màn hình */
-}
-/* ===== FIX museum cards layout ===== */
-.museum-card .grid-layout{
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center;
-    gap: 22px;
-}
-
-.museum-card .memory-card{
-    width:100%;
-}
-
-.museum-card .card-full-width{
-    width: 320px !important;
-}
-
-.museum-card .polaroid-card img{
-    width: 100%;
-    border-radius: 12px;
+    .card-full-width {
+        width: 100% !important; /* Trên điện thoại thì tự phóng to đầy màn hình */
+    }
 }
 
 /* --- CSS CHO NHỮNG NGÔI SAO TRONG BẢO TÀNG KÝ ỨC --- */
@@ -296,6 +289,7 @@ h2 {
     0% { transform: scale(0.8); opacity: 0.5; }
     100% { transform: scale(1.2); opacity: 1; }
 }
+
 
 
 
