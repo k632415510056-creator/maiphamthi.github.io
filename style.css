@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     font-family: 'Space Grotesk', sans-serif;
     background-color: #f0f4f8; 
@@ -12,12 +13,13 @@ body {
     justify-content: center;
     padding: 40px 20px;
 }
+
 .container {
     max-width: 600px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Khoảng cách giữa các hộp */
+    gap: 20px;
 }
 
 /* PHONG CÁCH GEN Z: Hộp có viền đen dày, đổ bóng cứng */
@@ -29,6 +31,7 @@ body {
     box-shadow: 6px 6px 0px #111;
     transition: transform 0.2s;
 }
+
 .card:hover {
     transform: translate(-2px, -2px);
     box-shadow: 8px 8px 0px #111;
@@ -39,6 +42,7 @@ body {
     text-align: center;
     background: #bde0fe; 
 }
+
 .avatar {
     width: 130px;
     height: 130px;
@@ -48,6 +52,7 @@ body {
     margin-bottom: 16px;
     background-color: #fff;
 }
+
 h1 { font-size: 1.8rem; margin-bottom: 8px; }
 .role { font-weight: bold; margin-bottom: 20px; }
 
@@ -58,6 +63,7 @@ h1 { font-size: 1.8rem; margin-bottom: 8px; }
     gap: 10px;
     flex-wrap: wrap;
 }
+
 .btn {
     text-decoration: none;
     color: #111;
@@ -68,24 +74,16 @@ h1 { font-size: 1.8rem; margin-bottom: 8px; }
     box-shadow: 3px 3px 0px #111;
     transition: all 0.2s;
 }
+
+.btn-pink { background-color: #ccccff; }
+.btn-blue { background-color: #4d71ff; color: #fff; }
+
 .btn:hover {
     transform: translate(-2px, -2px);
     box-shadow: 5px 5px 0px #111;
 }
-/* Màu cho nút Instagram */
-.btn-pink {
-    background-color: #ccccff;
-    color: #111;
-}
 
-/* Màu cho nút Facebook */
-.btn-yellow {
-    background-color: #4d71ff; 
-    color: #111;
-}
-
-/* Card Giới Thiệu */
-.about-card { background: #fff; }
+/* Card Giới Thiệu & Kỹ năng */
 h2 {
     border-bottom: 3px solid #111;
     padding-bottom: 10px;
@@ -93,13 +91,8 @@ h2 {
     display: inline-block;
 }
 
-/* Card Kỹ Năng*/
 .skills-card { background: #e2e2ff; }
-.tags {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
+.tags { display: flex; gap: 10px; flex-wrap: wrap; }
 .tag {
     background: #fff;
     border: 2px solid #111;
@@ -107,190 +100,91 @@ h2 {
     border-radius: 12px;
     font-weight: bold;
     box-shadow: 2px 2px 0px #111;
-
 }
-/* --- HIỆU ỨNG NGÔI SAO LẤP LÁNH --- */
+
+/* HIỆU ỨNG NHẤP NHÁY */
 .lap-lanh {
-    display: inline-block; /* Bắt buộc phải có để hiệu ứng hoạt động */
-    animation: nhapNhay 0.8s infinite alternate; /* Thời gian chớp tắt */
+    display: inline-block;
+    animation: nhapNhay 0.8s infinite alternate;
 }
 
-/* Khai báo chuyển động chớp tắt và phóng to thu nhỏ */
 @keyframes nhapNhay {
-    0% { 
-        transform: scale(0.8); /* Thu nhỏ lại một chút */
-        opacity: 0.5; /* Hơi mờ đi */
-    }
-    100% { 
-        transform: scale(1.3); /* Phóng to ra */
-        opacity: 1; /* Sáng rõ hoàn toàn */
-        filter: drop-shadow(0px 0px 8px #ffea00); /* Toả hào quang màu vàng */
-    }
+    0% { transform: scale(0.8); opacity: 0.5; }
+    100% { transform: scale(1.3); opacity: 1; filter: drop-shadow(0px 0px 8px #ffea00); }
 }
+
 /* ========================================= */
-/* CSS BẢO TÀNG KÝ ỨC                        */
+/* CSS BẢO TÀNG KÝ ỨC - ĐÃ CĂN GIỮA */
 /* ========================================= */
 .museum-card {
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa toàn bộ section */
+    width: 100%;
 }
 
-.museum-title {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 5px;
-    color: #111;
-}
+.museum-title { font-size: 2em; margin-bottom: 5px; text-align: center; }
+.museum-subtitle { font-size: 1em; margin-bottom: 30px; font-style: italic; opacity: 0.8; text-align: center; }
 
-.museum-subtitle {
-    text-align: center;
-    font-size: 1em;
-    margin-bottom: 30px;
-    font-style: italic;
-    opacity: 0.8;
-}
-
-/* Gộp chung grid-layout cho gọn và chuẩn xác */
 .grid-layout {
     display: flex;
     flex-direction: column;
-    align-items: center;     /* Căn giữa các thẻ con */
-    justify-content: center; 
-    gap: 22px;
+    align-items: center; 
+    gap: 25px;
+    width: 100%;
 }
 
-/* Style riêng cho các thẻ ký ức bên trong */
 .memory-card {
     background: #fff;
-    border: 2px solid #111; /* Viền đen chuẩn Neo-Brutalism */
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 4px 4px 0px #111; /* Đổ bóng cứng */
-    transition: transform 0.2s ease;
-    
-    /* THÊM 3 DÒNG NÀY ĐỂ CĂN GIỮA MỌI THỨ BÊN TRONG */
+    border: 3px solid #111;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 5px 5px 0px #111;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Căn giữa ảnh và khối theo chiều ngang */
-    text-align: center;  /* Căn giữa text */
+    align-items: center;
+    text-align: center;
     width: 100%;
+    max-width: 400px; /* Độ rộng vừa phải cho các hộp ký ức */
 }
 
-.memory-card:hover {
-    transform: translate(-2px, -2px); 
-    box-shadow: 6px 6px 0px #111;
-}
-
-.card-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+/* Style cho ảnh giữ nguyên kích cỡ gốc */
+.card-img-natural {
+    max-width: 100%;
+    height: auto; /* Ảnh về đúng kích cỡ gốc, không bị ép chiều cao */
     border-radius: 8px;
     border: 2px solid #111;
-    margin-bottom: 15px;
+    margin: 10px 0;
 }
 
-.card-title-mem {
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    color: #111; 
-}
+.card-title-mem { font-weight: bold; margin-bottom: 10px; }
 
-/* Đảm bảo khung nội dung (.note-box) cũng được căn giữa */
 .note-box {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.input-line {
-    border: none;
-    border-bottom: 2px dashed #111;
-    width: 100%;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1em;
-    padding: 5px 0;
-    background: transparent;
-    outline: none;
-    margin-bottom: 15px;
-}
-
-/* Khung Polaroid đặc biệt */
-.polaroid-card {
-    padding: 15px 15px 30px 15px; 
-    border-radius: 12px; /* Đồng bộ viền bo góc */
-}
-
-.polaroid-card .card-img {
-    height: 200px;
-    width: 100%;
-    border-radius: 12px; /* Fix góc ảnh bo tròn theo yêu cầu */
-}
-
-.polaroid-caption {
-    font-weight: bold;
-    margin-top: 5px;
-}
-
-/* Căn giữa khung cuối cùng & Đặt chiều rộng cố định */
-.card-full-width {
-    width: 320px !important; /* Fix kích thước cho bằng nhau */
-}
-
-/* Nút bấm */
-.btn-mem {
-    padding: 10px;
+    background: #fff9c4;
+    padding: 12px;
     border: 2px solid #111;
-    border-radius: 6px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    margin-top: auto;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 2px 2px 0px #111;
 }
 
-.btn-mem:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 3px 3px 0px #111;
-}
+.polaroid-card { background: #fdfdfd; padding-bottom: 25px; }
+.polaroid-caption { font-weight: bold; font-family: 'Space Grotesk', sans-serif; margin-top: 10px; }
 
-.btn-blue { background: #bdc0fe; color: #111; }
-.btn-white { background: #fff; color: #111; }
-
-/* Responsive cho điện thoại */
-@media (max-width: 600px) {
-    .card-full-width {
-        width: 100% !important; /* Trên điện thoại thì tự phóng to đầy màn hình */
-    }
-}
-
-/* --- CSS CHO NHỮNG NGÔI SAO TRONG BẢO TÀNG KÝ ỨC --- */
-
-.relative-box {
-    position: relative; /* Giữ các ngôi sao nằm quanh phạm vi của thẻ này */
-}
-
+/* Ngôi sao */
+.relative-box { position: relative; }
 .star {
     position: absolute;
-    font-size: 1.5rem; /* Độ lớn của sao */
-    z-index: 10;
-    /* Hiệu ứng nhấp nháy lấp lánh */
+    font-size: 1.5rem;
     animation: twinkle 1.5s infinite alternate ease-in-out;
 }
-
-/* Tọa độ đặt sao ở các góc (có thể chỉnh số px để vừa ý hơn) */
 .star-top-left { top: -15px; left: -15px; }
+.star-bottom-right { bottom: -15px; right: -15px; }
 .star-top-right { top: -15px; right: -15px; }
 .star-bottom-left { bottom: -15px; left: -15px; }
-.star-bottom-right { bottom: -15px; right: -15px; }
 
-/* Tạo animation nhấp nháy */
 @keyframes twinkle {
     0% { transform: scale(0.8); opacity: 0.5; }
     100% { transform: scale(1.2); opacity: 1; }
 }
-
-
-
-
-
